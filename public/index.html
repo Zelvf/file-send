@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#152238">
+  <title>File Send</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="top"><div class="logo">↗</div><div><h1>File Send</h1><p>Move files between your devices on the same network.</p></div></header>
+    <section class="card" id="loginCard" hidden>
+      <div class="eyebrow">CONNECT THIS DEVICE</div>
+      <h2>Enter the access code</h2>
+      <p>Find the 8-digit code in the black window on the Windows computer running File Send.</p>
+      <form id="loginForm"><label for="code">Access code</label><div class="loginRow"><input id="code" type="password" inputmode="numeric" pattern="[0-9]{8}" maxlength="8" autocomplete="one-time-code" required><button type="submit">Connect</button></div></form>
+      <p class="message" id="loginMessage" role="status"></p>
+    </section>
+    <div id="workspace" hidden>
+      <section class="card connection"><div><div class="eyebrow">READY TO SHARE</div><h2>Send files to this computer</h2><p>Choose files here from any connected device. They are saved in the <strong>received</strong> folder on the Windows computer running File Send.</p></div><button class="quiet" id="lockButton" type="button">Disconnect</button></section>
+      <section class="card uploadCard"><label class="drop" id="dropZone" for="fileInput"><span class="uploadIcon">↑</span><strong>Choose files or drop them here</strong><span>Send photos, videos, documents, or other files · up to 5 GB each</span></label><input id="fileInput" type="file" multiple hidden><div id="queue" aria-live="polite"></div></section>
+      <section class="card" id="transfersCard" hidden><div class="eyebrow">LIVE ON ALL DEVICES</div><h2>Transfer activity</h2><div id="transfers" aria-live="polite"></div></section>
+      <section class="card filesCard"><div class="sectionHead"><div><div class="eyebrow">SHARED ON THIS COMPUTER</div><h2>Files ready to download</h2></div><button class="quiet" id="refreshButton" type="button">Refresh</button></div><p id="emptyState">No files yet. Add one above to share it with your other devices.</p><div id="files"></div></section>
+      <section class="addressCard"><div class="eyebrow">OPEN ON ANOTHER DEVICE</div><p>Use one of these addresses on a device connected to the same Wi-Fi or local network:</p><div id="addresses"></div><small>Keep the File Send window open on this computer. If another device cannot connect, allow Node.js through Windows Firewall on private networks.</small></section>
+    </div>
+  </main>
+</body>
+</html>

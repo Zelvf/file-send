@@ -1,0 +1,11 @@
+{
+  "name": "lan-file-send",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local network file transfer for Windows, phones, and other computers",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "engines": { "node": ">=18" }
+}
